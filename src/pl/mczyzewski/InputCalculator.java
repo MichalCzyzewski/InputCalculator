@@ -15,31 +15,34 @@ public class InputCalculator
         while (true)
         {
             boolean isInt = scanner.hasNextInt();
-            if(!scanner.hasNextInt())
-            {
-                System.out.println("SUM =" + sum+ " AVG = "+ avarage);
-                break;
-            }
 
+            if (!scanner.hasNextInt())
+            {
+                if (count == 0)
+                {
+                    System.out.println("SUM =" + sum + " AVG = " + avarage);
+                    break;
+                } else
+                {
+                    double allSume = sum / count;
+                    avarage = Math.round(allSume);
+                    System.out.println("SUM =" + sum + " AVG = " + avarage);
+                    break;
+                }
+
+            }
             if (isInt)
             {
                 number = scanner.nextInt();
-
-
-
-                    if(number>0)
+                if (number > 0)
                 {
-                    sum+=number;
+                    sum += number;
                     count++;
                 }
-            }else
-            {   double allSume = sum/count;
-                avarage = Math.round(allSume);
 
-                System.out.println("SUM =" + sum+ " AVG = "+ avarage);
-                break;
+                scanner.nextLine();
             }
-            scanner.nextLine();
+
         }
         scanner.close();
     }
