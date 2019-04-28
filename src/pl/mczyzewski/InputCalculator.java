@@ -6,45 +6,26 @@ public class InputCalculator
 {
     public static void inputThenPrintSumAndAverage()
     {
-        int number = 0;
-        int sum = 0;
-        long avarage = 0;
-        int count = 0;
         Scanner scanner = new Scanner(System.in);
-
-        while (true)
-        {
-            boolean isInt = scanner.hasNextInt();
-
-            if (!scanner.hasNextInt())
+        int count =0, sum=0 ,number;
+        double avr;
+        do{
+            if(scanner.hasNextInt())
             {
-                if (count == 0)
-                {
-                    System.out.println("SUM =" + sum + " AVG = " + avarage);
-                    break;
-                } else
-                {
-                    double allSume = sum / count;
-                    avarage = Math.round(allSume);
-                    System.out.println("SUM =" + sum + " AVG = " + avarage);
-                    break;
-                }
-
-            }
-            if (isInt)
-            {
-                number = scanner.nextInt();
-                if (number > 0)
-                {
-                    sum += number;
-                    count++;
-                }
-
+                number=scanner.nextInt();
+                sum+= number;
+                count++;
                 scanner.nextLine();
+            }else{
+                break;
             }
 
         }
-        scanner.close();
+        while (true);
+        avr = (double) sum/count;
+        System.out.println(("SUM = " + sum + " AVG = " + Math.round(avr)));
+
     }
 }
+
 
