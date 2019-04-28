@@ -15,11 +15,19 @@ public class InputCalculator
         while (true)
         {
             boolean isInt = scanner.hasNextInt();
+            if(!scanner.hasNextInt())
+            {
+                System.out.println("SUM =" + sum+ " AVG = "+ avarage);
+                break;
+            }
+
             if (isInt)
             {
                 number = scanner.nextInt();
 
-                if(number>0)
+
+
+                    if(number>0)
                 {
                     sum+=number;
                     count++;
