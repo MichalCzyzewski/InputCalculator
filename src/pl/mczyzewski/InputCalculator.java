@@ -7,24 +7,26 @@ public class InputCalculator
     public static void inputThenPrintSumAndAverage()
     {
         Scanner scanner = new Scanner(System.in);
-        int count =0, sum=0 ,number;
+        int count =0, sum=0 ;
         double avr;
-        do{
-            if(scanner.hasNextInt())
+
+        while (true)
+        {
+            boolean isInt = scanner.hasNextInt();
+            if (isInt)
             {
-                number=scanner.nextInt();
-                sum+= number;
+                sum += scanner.nextInt();
                 count++;
                 scanner.nextLine();
-            }else{
+
+            }
+            else
+            {
                 break;
             }
-
         }
-        while (true);
-        avr = (double) sum/count;
-        System.out.println(("SUM = " + sum + " AVG = " + Math.round(avr)));
 
+        System.out.println("SUM = " + sum + " AVG = " + Math.round(avr = (double) sum/(double) count));
     }
 }
 
